@@ -120,9 +120,35 @@
         }
                 static void ReserveRoom()
                 {
+                   Console.WriteLine("Enter Guest name ");
+                   string guestName = Console.ReadLine();
+                   Console.WriteLine("Enter room number: ");
+                   int roomNumber = int.Parse(Console.ReadLine());
+                   int roomIndex = -1;
+
+                    for (int i = 0;i < RoomCounter; i++)
+                    {
+                    if (RoomNum[i] == roomNumber)
+                      {
+                        roomIndex = i;
+                        break;
+                      }
+                         if(roomIndex == -1)
+                        {
+                             Console.WriteLine("Room does not exist.");
+                             return;
+
 
                 }
-                static void SearchReserve()
+
+            }
+          
+
+            
+
+
+        }
+        static void SearchReserve()
                 {
 
                 }
