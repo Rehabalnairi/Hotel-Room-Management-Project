@@ -164,9 +164,9 @@ namespace Hotel_Room_Management_Project
         static void viewReserve()
         {
             Console.WriteLine("guest name,\troom Numbers\tnights\trate\tcost");
-            for (int i = 0; i < RoomCounter; i++)
+            for (int i = 0; i < RoomCounter; i++) //loop for check if there any recored 
             {
-                if (Reserved[i])
+                if (Reserved[i]) //for check if room Reserved
                 {
                     double TotalCOst = Rate[i] * nights[i];
                     Console.WriteLine($"{guestNames[i]}\t{RoomNum[i]}\t{nights[i]}\t{Rate[i]}\t{TotalCOst}");
