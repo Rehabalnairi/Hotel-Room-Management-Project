@@ -16,53 +16,65 @@ namespace Hotel_Room_Management_Project
         //declare array and varbiles 
         static void Main(string[] args)
         {
-            while (true) //switch statment inside while statment for create mune 
+            try
             {
-                Console.Clear();
-                Console.WriteLine("1.Add a new room");
-                Console.WriteLine("2. View all rooms .  ");
-                Console.WriteLine("3.Reserve a room for a guest");
-                Console.WriteLine("4.View all reservations with total cost ");
-                Console.WriteLine("5.Search reservation by guest name (case-insensitive) ");
-                Console.WriteLine("6Find the highest-paying guest");
-                Console.WriteLine("7.Cancel a reservation by room number");
-                Console.WriteLine("0.Exit");
-                Console.Write("Enter your choice: ");
-
-                int choice = int.Parse(Console.ReadLine());
-
-                switch (choice)
+                while (true) //switch statment inside while statment for create mune 
                 {
-                    case 1:
-                        addRoom();
-                        break;
+                    Console.Clear();
+                    Console.WriteLine("1.Add a new room");
+                    Console.WriteLine("2. View all rooms .  ");
+                    Console.WriteLine("3.Reserve a room for a guest");
+                    Console.WriteLine("4.View all reservations with total cost ");
+                    Console.WriteLine("5.Search reservation by guest name (case-insensitive) ");
+                    Console.WriteLine("6Find the highest-paying guest");
+                    Console.WriteLine("7.Cancel a reservation by room number");
+                    Console.WriteLine("0.Exit");
+                    Console.Write("Enter your choice: ");
 
-                    case 2:
-                        view();
-                        break;
-                    case 3:
-                        ReserveRoom();
-                        break;
-                    case 4:
-                        viewReserve();
-                        break;
-                    case 5:
-                        SearchReserve();
-                        break;
-                    case 6:
-                        Findhighest();
-                        break;
-                    case 7:
-                        CancelReser();
-                        break;
+                    int choice = int.Parse(Console.ReadLine());
 
-                    case 0: return;
-                    default:
-                        Console.WriteLine("Invalid choice! Try again.");
-                        break;
+                    switch (choice)
+                    {
+                        case 1:
+                            addRoom();
+                            break;
+
+                        case 2:
+                            view();
+                            break;
+                        case 3:
+                            ReserveRoom();
+                            break;
+                        case 4:
+                            viewReserve();
+                            break;
+                        case 5:
+                            SearchReserve();
+                            break;
+                        case 6:
+                            Findhighest();
+                            break;
+                        case 7:
+                            CancelReser();
+                            break;
+
+                        case 0: return;
+                        default:
+                            Console.WriteLine("Invalid choice! Try again.");
+                            break;
+
+                    }
                 }
+            }
 
-                Console.ReadLine();
+
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        
+            Console.ReadLine();
 
 
                 static void addRoom()
@@ -106,8 +118,9 @@ namespace Hotel_Room_Management_Project
                 }
 
 
+
+            
             }
-        }
         static void view()
         {
             Console.WriteLine("Room Number\tDaily Rate\tStatus");
